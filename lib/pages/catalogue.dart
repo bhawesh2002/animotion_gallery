@@ -1,3 +1,4 @@
+import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
 import 'package:flutter/material.dart';
 
 class Catalogue extends StatelessWidget {
@@ -55,7 +56,10 @@ class Catalogue extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(10),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AniContainerPage()));
+                  },
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.9,
                     child: Padding(
