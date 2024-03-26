@@ -17,8 +17,9 @@ class AniContainerPage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                    iconSize: 25,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: const Icon(Icons.arrow_back)),
               ),
             ),
@@ -68,12 +69,12 @@ class _AniContainerState extends State<AniContainer> {
 
   void animateContainer() {
     setState(() {
-      width = randWidth();
-      height = randHeight();
-      color = randColor();
-      borderColor = randColor();
-      borderWidth = randBorderWidth();
-      borderRadius = randBorderRadius();
+      width = Random().nextDouble() * (350 - 50) + 50;
+      height = Random().nextDouble() * (450 - 50) + 50;
+      color = Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
+      borderColor = Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
+      borderWidth = Random().nextDouble() * 10;
+      borderRadius = Random().nextDouble() * 100;
     });
   }
 
@@ -94,24 +95,4 @@ class _AniContainerState extends State<AniContainer> {
       ),
     );
   }
-}
-
-double randHeight() {
-  return Random().nextDouble() * (450 - 50) + 50;
-}
-
-double randWidth() {
-  return Random().nextDouble() * (350 - 50) + 50;
-}
-
-Color randColor() {
-  return Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
-}
-
-double randBorderWidth() {
-  return Random().nextDouble() * 10;
-}
-
-double randBorderRadius() {
-  return Random().nextDouble() * 100;
 }
