@@ -7,17 +7,29 @@ class AniContainerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
         body: Stack(
           children: [
             Positioned.fill(
+              top: 10,
+              left: 10,
               child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(child: AniContainer()),
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(Icons.arrow_back)),
               ),
             ),
-            Positioned.fill(
+            const Positioned.fill(
+              child: Align(
+                alignment: Alignment.center,
+                child: AniContainer(),
+              ),
+            ),
+            const Positioned.fill(
               bottom: 100,
               child: Align(
                 alignment: Alignment.bottomCenter,
