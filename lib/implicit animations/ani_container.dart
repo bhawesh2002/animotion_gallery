@@ -14,7 +14,7 @@ class AniContainerPage extends StatelessWidget {
             Positioned.fill(
               child: Align(
                 alignment: Alignment.center,
-                child: AniContainer(),
+                child: SizedBox(child: AniContainer()),
               ),
             ),
             Positioned.fill(
@@ -86,11 +86,11 @@ class _AniContainerState extends State<AniContainer> {
 }
 
 double randHeight() {
-  return Random().nextDouble() * (300 - 50) + 50;
+  return Random().nextDouble() * (450 - 50) + 50;
 }
 
 double randWidth() {
-  return Random().nextDouble() * (300 - 50) + 50;
+  return Random().nextDouble() * (350 - 50) + 50;
 }
 
 Color randColor() {
