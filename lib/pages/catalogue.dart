@@ -1,4 +1,5 @@
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_scale.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
 
@@ -55,6 +56,15 @@ class Catalogue extends StatelessWidget {
               child: CatalogueItem(
                 itemLabel: "Container",
                 widget: AniContainerPage(),
+              ),
+            ),
+            const SizedBox.square(
+              dimension: 16,
+            ),
+            const Center(
+              child: CatalogueItem(
+                itemLabel: "Scale",
+                widget: AniScalePage(),
               ),
             ),
           ],
