@@ -72,6 +72,7 @@ class _AniRotationState extends State<AniRotation> {
     return GestureDetector(
       onTap: animateRotation,
       child: AnimatedRotation(
+        curve: Curves.easeInOutQuart,
         turns: rotation,
         duration: const Duration(milliseconds: 300),
         child: Container(
