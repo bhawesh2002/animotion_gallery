@@ -20,6 +20,7 @@ class Catalogue extends StatelessWidget {
           ),
         ),
         body: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
@@ -52,20 +53,21 @@ class Catalogue extends StatelessWidget {
             const SizedBox.square(
               dimension: 16,
             ),
-            const Center(
-              child: CatalogueItem(
-                itemLabel: "Container",
-                widget: AniContainerPage(),
-              ),
-            ),
-            const SizedBox.square(
-              dimension: 16,
-            ),
-            const Center(
-              child: CatalogueItem(
-                itemLabel: "Scale",
-                widget: AniScalePage(),
-              ),
+            ListView(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05),
+              shrinkWrap: true,
+              children: const [
+                CatalogueItem(
+                    itemLabel: "Container", widget: AniContainerPage()),
+                SizedBox.square(
+                  dimension: 16,
+                ),
+                CatalogueItem(itemLabel: "Scale", widget: AniScalePage()),
+                SizedBox.square(
+                  dimension: 16,
+                ),
+              ],
             ),
           ],
         ),
