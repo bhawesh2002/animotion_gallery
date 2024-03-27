@@ -1,4 +1,5 @@
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_rotation.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_scale.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +68,7 @@ class Catalogue extends StatelessWidget {
                 SizedBox.square(
                   dimension: 16,
                 ),
+                CatalogueItem(itemLabel: "Rotation", widget: AniRotationPage()),
               ],
             ),
           ],
