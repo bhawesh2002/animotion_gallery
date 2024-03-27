@@ -53,11 +53,10 @@ class AniRotation extends StatefulWidget {
 }
 
 class _AniRotationState extends State<AniRotation> {
-  late double rotation;
+  double rotation = 0;
 
   @override
   void initState() {
-    animateRotation();
     super.initState();
   }
 
