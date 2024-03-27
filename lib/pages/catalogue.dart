@@ -69,6 +69,9 @@ class Catalogue extends StatelessWidget {
                   dimension: 16,
                 ),
                 CatalogueItem(itemLabel: "Rotation", widget: AniRotationPage()),
+                SizedBox.square(
+                  dimension: 16,
+                ),
               ],
             ),
           ],
