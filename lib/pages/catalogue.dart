@@ -1,4 +1,5 @@
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
+import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
 
 class Catalogue extends StatelessWidget {
@@ -50,34 +51,12 @@ class Catalogue extends StatelessWidget {
             const SizedBox.square(
               dimension: 16,
             ),
-            Center(
-              child: Material(
-                elevation: 5,
-                borderRadius: BorderRadius.circular(10),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(10),
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AniContainerPage()));
-                  },
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: MediaQuery.of(context).size.height * 0.02,
-                          horizontal: MediaQuery.of(context).size.width * 0.05),
-                      child: Text(
-                        "Container",
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width * 0.040,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+            const Center(
+              child: CatalogueItem(
+                itemLabel: "Container",
+                widget: AniContainerPage(),
               ),
-            )
+            ),
           ],
         ),
       ),
