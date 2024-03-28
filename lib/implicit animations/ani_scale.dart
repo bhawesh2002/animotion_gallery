@@ -28,13 +28,9 @@ class AniScalePage extends StatelessWidget {
             bottom: 100,
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: SizedBox(
-                width: 300,
-                child: Text(
-                  "Tap at the centre of the Container to Scale it",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
-                ),
+              child: Text(
+                "Tap on the Container to Scale it",
+                style: TextStyle(fontSize: 18),
               ),
             ),
           ),
@@ -68,12 +64,12 @@ class _AniScaleState extends State<AniScale> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: animateScale,
-      child: AnimatedScale(
-        scale: scale,
-        curve: Curves.easeInOut,
-        duration: const Duration(milliseconds: 300),
+    return AnimatedScale(
+      scale: scale,
+      curve: Curves.easeInOut,
+      duration: const Duration(milliseconds: 300),
+      child: GestureDetector(
+        onTap: animateScale,
         child: Container(
           width: 50,
           height: 50,
