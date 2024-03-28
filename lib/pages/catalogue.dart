@@ -1,6 +1,7 @@
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_rotation.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_scale.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_slide.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
 
@@ -69,6 +70,10 @@ class Catalogue extends StatelessWidget {
                   dimension: 16,
                 ),
                 CatalogueItem(itemLabel: "Rotation", widget: AniRotationPage()),
+                SizedBox.square(
+                  dimension: 16,
+                ),
+                CatalogueItem(itemLabel: "Slide", widget: AniSlidePage()),
                 SizedBox.square(
                   dimension: 16,
                 ),
