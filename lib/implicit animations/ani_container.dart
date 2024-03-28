@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animotion_gallery/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
 class AniContainerPage extends StatelessWidget {
@@ -15,13 +16,7 @@ class AniContainerPage extends StatelessWidget {
               top: 10,
               left: 10,
               child: Align(
-                alignment: Alignment.topLeft,
-                child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: const Icon(Icons.arrow_back)),
-              ),
+                  alignment: Alignment.topLeft, child: backArrow(context)),
             ),
             const Positioned.fill(
               child: Align(
