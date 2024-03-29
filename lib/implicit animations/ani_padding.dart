@@ -75,15 +75,13 @@ class _AniPaddingState extends State<AniPadding> {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder(
-      child: AnimatedPadding(
-        padding: padding,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOutSine,
-        child: GestureDetector(
-          onTap: animatePadding,
-          child: const FlutterLogo(),
-        ),
+    return AnimatedPadding(
+      padding: padding,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOutSine,
+      child: GestureDetector(
+        onTap: animatePadding,
+        child: const FlutterLogo(),
       ),
     );
   }
