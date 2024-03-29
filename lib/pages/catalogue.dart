@@ -5,17 +5,16 @@ import 'package:animotion_gallery/implicit%20animations/ani_slide.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
 
-Map<String, Widget> catalogueEntries = {
-  "Container": const AniContainerPage(),
-  "Scale": const AniScalePage(),
-  "Rotation": const AniRotationPage(),
-  "Slide": const AniSlidePage()
-};
-
 class Catalogue extends StatelessWidget {
   const Catalogue({super.key});
   @override
   Widget build(BuildContext context) {
+    Map<String, Widget> catalogueEntries = {
+      "Container": const AniContainerPage(),
+      "Scale": const AniScalePage(),
+      "Rotation": const AniRotationPage(),
+      "Slide": const AniSlidePage(),
+    };
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
