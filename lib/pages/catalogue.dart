@@ -5,6 +5,13 @@ import 'package:animotion_gallery/implicit%20animations/ani_slide.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
 
+Map<String, Widget> catalogueEntries = {
+  "Container": const AniContainerPage(),
+  "Scale": const AniScalePage(),
+  "Rotation": const AniRotationPage(),
+  "Slide": const AniSlidePage()
+};
+
 class Catalogue extends StatelessWidget {
   const Catalogue({super.key});
   @override
@@ -55,29 +62,19 @@ class Catalogue extends StatelessWidget {
             const SizedBox.square(
               dimension: 16,
             ),
-            ListView(
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05),
+            ListView.builder(
               shrinkWrap: true,
-              children: const [
-                CatalogueItem(
-                    itemLabel: "Container", widget: AniContainerPage()),
-                SizedBox.square(
-                  dimension: 16,
-                ),
-                CatalogueItem(itemLabel: "Scale", widget: AniScalePage()),
-                SizedBox.square(
-                  dimension: 16,
-                ),
-                CatalogueItem(itemLabel: "Rotation", widget: AniRotationPage()),
-                SizedBox.square(
-                  dimension: 16,
-                ),
-                CatalogueItem(itemLabel: "Slide", widget: AniSlidePage()),
-                SizedBox.square(
-                  dimension: 16,
-                ),
-              ],
+              itemCount: catalogueEntries.length,
+              itemBuilder: ((context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.05,
+                      vertical: MediaQuery.of(context).size.height * 0.01),
+                  child: CatalogueItem(
+                      itemLabel: catalogueEntries.keys.elementAt(index),
+                      widget: catalogueEntries.values.elementAt(index)),
+                );
+              }),
             ),
           ],
         ),
