@@ -1,4 +1,5 @@
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_opacity.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_rotation.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_scale.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_slide.dart';
@@ -14,6 +15,7 @@ class Catalogue extends StatelessWidget {
       "Scale": const AniScalePage(),
       "Rotation": const AniRotationPage(),
       "Slide": const AniSlidePage(),
+      "Opacity": const AniOpacityPage()
     };
     return SafeArea(
       child: Scaffold(
