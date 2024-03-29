@@ -55,8 +55,8 @@ class AniPositioned extends StatefulWidget {
 }
 
 class _AniPositionedState extends State<AniPositioned> {
-  double left = 0;
-  double top = 0;
+  double left = 150;
+  double top = 200;
 
   void animatePosition() {
     setState(() {
