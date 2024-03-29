@@ -18,10 +18,12 @@ class AniPaddingPage extends StatelessWidget {
               child: Align(
                   alignment: Alignment.topLeft, child: backArrow(context)),
             ),
-            Center(
+            Positioned.fill(
+              top: 100,
+              bottom: 200,
+              left: 25,
+              right: 25,
               child: Container(
-                width: 300,
-                height: 300,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
                   border: Border.all(width: 2, color: Colors.black),
@@ -61,10 +63,10 @@ class _AniPaddingState extends State<AniPadding> {
   EdgeInsetsGeometry padding = const EdgeInsets.all(10);
 
   void animatePadding() {
-    double left = Random().nextDouble() * 120;
-    double right = Random().nextDouble() * 120;
-    double top = Random().nextDouble() * 120;
-    double bottom = Random().nextDouble() * 120;
+    double left = Random().nextDouble() * 150;
+    double right = Random().nextDouble() * 150;
+    double top = Random().nextDouble() * 150;
+    double bottom = Random().nextDouble() * 150;
     setState(() {
       padding =
           EdgeInsets.only(left: left, right: right, top: top, bottom: bottom);
@@ -73,13 +75,15 @@ class _AniPaddingState extends State<AniPadding> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedPadding(
-      padding: padding,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOutSine,
-      child: GestureDetector(
-        onTap: animatePadding,
-        child: const FlutterLogo(),
+    return Placeholder(
+      child: AnimatedPadding(
+        padding: padding,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOutSine,
+        child: GestureDetector(
+          onTap: animatePadding,
+          child: const FlutterLogo(),
+        ),
       ),
     );
   }
