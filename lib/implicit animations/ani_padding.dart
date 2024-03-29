@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animotion_gallery/widgets/back_arrow.dart';
 import 'package:flutter/material.dart';
 
 class AniPaddingPage extends StatelessWidget {
@@ -9,16 +10,40 @@ class AniPaddingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Center(
-          child: Container(
-            width: 300,
-            height: 300,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              border: Border.all(width: 2, color: Colors.black),
+        body: Stack(
+          children: [
+            Positioned.fill(
+              top: 10,
+              left: 10,
+              child: Align(
+                  alignment: Alignment.topLeft, child: backArrow(context)),
             ),
-            child: const AniPadding(),
-          ),
+            Center(
+              child: Container(
+                width: 300,
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  border: Border.all(width: 2, color: Colors.black),
+                ),
+                child: const AniPadding(),
+              ),
+            ),
+            const Positioned.fill(
+              bottom: 100,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: SizedBox(
+                  width: 300,
+                  child: Text(
+                    "Tap Flutter logo to change its padding",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
