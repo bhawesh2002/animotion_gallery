@@ -24,7 +24,10 @@ class AniPositionedPage extends StatelessWidget {
               right: 25,
               bottom: 200,
               child: Container(
-                  color: Colors.grey.shade200, child: const AniPositioned()),
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      border: Border.all(width: 2)),
+                  child: const AniPositioned()),
             ),
             const Positioned.fill(
               bottom: 100,
