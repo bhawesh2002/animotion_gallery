@@ -36,10 +36,10 @@ class _AniPaddingState extends State<AniPadding> {
   EdgeInsetsGeometry padding = const EdgeInsets.all(10);
 
   void animatePadding() {
-    double left = Random().nextDouble() * 150;
-    double right = Random().nextDouble() * 150;
-    double top = Random().nextDouble() * 150;
-    double bottom = Random().nextDouble() * 150;
+    double left = Random().nextDouble() * 120;
+    double right = Random().nextDouble() * 120;
+    double top = Random().nextDouble() * 120;
+    double bottom = Random().nextDouble() * 120;
     setState(() {
       padding =
           EdgeInsets.only(left: left, right: right, top: top, bottom: bottom);
@@ -51,7 +51,7 @@ class _AniPaddingState extends State<AniPadding> {
     return AnimatedPadding(
       padding: padding,
       duration: const Duration(milliseconds: 300),
-      curve: Curves.decelerate,
+      curve: Curves.easeInOutSine,
       child: GestureDetector(
         onTap: animatePadding,
         child: const FlutterLogo(),
