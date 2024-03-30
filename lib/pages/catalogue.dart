@@ -5,6 +5,7 @@ import 'package:animotion_gallery/implicit%20animations/ani_physical_model.dart'
 import 'package:animotion_gallery/implicit%20animations/ani_positioned.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_rotation.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_scale.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_size.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_slide.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class Catalogue extends StatelessWidget {
     Map<String, Widget> catalogueEntries = {
       "Container": const AniContainerPage(),
       "Scale": const AniScalePage(),
+      "Size": const AniSizePage(),
       "Rotation": const AniRotationPage(),
       "Slide": const AniSlidePage(),
       "Opacity": const AniOpacityPage(),
