@@ -72,7 +72,7 @@ class Catalogue extends StatelessWidget {
               dimension: 16,
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: MediaQuery.of(context).size.height * 0.45,
               child: Scrollbar(
                 thumbVisibility: true,
                 thickness: 6,
