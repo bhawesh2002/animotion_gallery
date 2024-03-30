@@ -1,9 +1,7 @@
 import 'dart:math';
 
 import 'package:animotion_gallery/widgets/back_arrow.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AniAlignPage extends StatelessWidget {
   const AniAlignPage({super.key});
@@ -81,8 +79,8 @@ class _AniAlignState extends State<AniAlign> {
             child: GestureDetector(
               onTap: animateAlignment,
               child: SizedBox(
-                width: 90,
-                height: 90,
+                width: 120,
+                height: 120,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
