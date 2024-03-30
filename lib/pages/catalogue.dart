@@ -1,3 +1,4 @@
+import 'package:animotion_gallery/implicit%20animations/ani_align.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_opacity.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_padding.dart';
@@ -22,6 +23,7 @@ class Catalogue extends StatelessWidget {
       "Slide": const AniSlidePage(),
       "Opacity": const AniOpacityPage(),
       "Padding": const AniPaddingPage(),
+      "Align": const AniAlignPage(),
       "Positioned": const AniPositionedPage(),
       "Physical Model": const AniPhysicalModelPage(),
     };
