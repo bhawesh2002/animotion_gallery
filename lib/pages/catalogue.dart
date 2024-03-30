@@ -21,7 +21,7 @@ class Catalogue extends StatelessWidget {
       "Opacity": const AniOpacityPage(),
       "Padding": const AniPaddingPage(),
       "Positioned": const AniPositionedPage(),
-      "Physical Model": const AniPhysicalModelPage()
+      "Physical Model": const AniPhysicalModelPage(),
     };
     return SafeArea(
       child: Scaffold(
@@ -69,19 +69,28 @@ class Catalogue extends StatelessWidget {
             const SizedBox.square(
               dimension: 16,
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: catalogueEntries.length,
-              itemBuilder: ((context, index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.05,
-                      vertical: MediaQuery.of(context).size.height * 0.01),
-                  child: CatalogueItem(
-                      itemLabel: catalogueEntries.keys.elementAt(index),
-                      widget: catalogueEntries.values.elementAt(index)),
-                );
-              }),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.7,
+              child: Scrollbar(
+                thumbVisibility: true,
+                thickness: 6,
+                radius: const Radius.circular(50),
+                interactive: true,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: catalogueEntries.length,
+                  itemBuilder: ((context, index) {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * 0.05,
+                          vertical: MediaQuery.of(context).size.height * 0.01),
+                      child: CatalogueItem(
+                          itemLabel: catalogueEntries.keys.elementAt(index),
+                          widget: catalogueEntries.values.elementAt(index)),
+                    );
+                  }),
+                ),
+              ),
             ),
           ],
         ),
