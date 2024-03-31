@@ -1,5 +1,6 @@
 import 'package:animotion_gallery/implicit%20animations/ani_align.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_container.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_cross_fade.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_opacity.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_padding.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_physical_model.dart';
@@ -26,6 +27,7 @@ class Catalogue extends StatelessWidget {
       "Align": const AniAlignPage(),
       "Positioned": const AniPositionedPage(),
       "Physical Model": const AniPhysicalModelPage(),
+      "Cross Fade": const AniCrossFadePage(),
     };
     return SafeArea(
       child: Scaffold(
