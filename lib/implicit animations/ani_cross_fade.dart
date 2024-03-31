@@ -26,9 +26,13 @@ class AniCrossFadePage extends StatelessWidget {
             bottom: 100,
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: Text(
-                "Tap on the Container to Scale it",
-                style: TextStyle(fontSize: 18),
+              child: SizedBox(
+                width: 350,
+                child: Text(
+                  "Tap on the Container to animate between rectangle and circle",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ),
           ),
