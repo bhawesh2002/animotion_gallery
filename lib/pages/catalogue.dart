@@ -9,6 +9,7 @@ import 'package:animotion_gallery/implicit%20animations/ani_rotation.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_scale.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_size.dart';
 import 'package:animotion_gallery/implicit%20animations/ani_slide.dart';
+import 'package:animotion_gallery/implicit%20animations/ani_switcher.dart';
 import 'package:animotion_gallery/widgets/catalogue_item.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,7 @@ class Catalogue extends StatelessWidget {
       "Positioned": const AniPositionedPage(),
       "Physical Model": const AniPhysicalModelPage(),
       "Cross Fade": const AniCrossFadePage(),
+      "Switcher": const AniSwitcherPage(),
     };
     return SafeArea(
       child: Scaffold(
