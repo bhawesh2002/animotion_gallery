@@ -63,41 +63,31 @@ class _AniAlignState extends State<AniAlign> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(width: 2),
-            color: Colors.grey.shade200,
-          ),
-        ),
-        Positioned.fill(
-          child: AnimatedAlign(
-            duration: const Duration(milliseconds: 350),
-            alignment: alignment,
-            curve: Curves.easeInOutCubic,
-            child: GestureDetector(
-              onTap: animateAlignment,
-              child: SizedBox(
-                width: 120,
-                height: 120,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const FlutterLogo(
-                      size: 60,
-                    ),
-                    const SizedBox.square(
-                      dimension: 10,
-                    ),
-                    Text("(${alignment.x}, ${alignment.y})")
-                  ],
+    return Positioned.fill(
+      child: AnimatedAlign(
+        duration: const Duration(milliseconds: 350),
+        alignment: alignment,
+        curve: Curves.easeInOutCubic,
+        child: GestureDetector(
+          onTap: animateAlignment,
+          child: SizedBox(
+            width: 120,
+            height: 120,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const FlutterLogo(
+                  size: 60,
                 ),
-              ),
+                const SizedBox.square(
+                  dimension: 10,
+                ),
+                Text("(${alignment.x}, ${alignment.y})")
+              ],
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }
