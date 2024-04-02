@@ -9,29 +9,54 @@ class Playground extends StatefulWidget {
 
 class _PlaygroundState extends State<Playground> {
   Offset _offset = Offset.zero;
+  void _resetOffset() {
+    setState(() {
+      _offset = Offset.zero;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onPanUpdate: (details) {
-        setState(() {
-          _offset += details.delta;
-        });
-      },
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          return Container(
-            width: constraints.maxWidth,
-            height: constraints.maxHeight,
-            decoration: BoxDecoration(
-              border: Border.all(width: 2, color: Colors.grey),
+    return Stack(
+      children: [
+        GestureDetector(
+          onPanUpdate: (details) {
+            setState(() {
+              _offset += details.delta;
+            });
+          },
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Container(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.grey),
+                ),
+                child: CustomPaint(
+                  painter: GraphPainter(offset: _offset),
+                  size: Size.infinite,
+                ),
+              );
+            },
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Container(
+            margin: const EdgeInsets.all(14.0),
+            child: IconButton(
+              style: IconButton.styleFrom(
+                backgroundColor: Colors.white,
+                elevation: 2,
+                shadowColor: Colors.black,
+              ),
+              onPressed: _resetOffset,
+              icon: const Icon(Icons.refresh),
             ),
-            child: CustomPaint(
-              painter: GraphPainter(offset: _offset),
-              size: Size.infinite,
-            ),
-          );
-        },
-      ),
+          ),
+        ),
+      ],
     );
   }
 }
