@@ -11,33 +11,26 @@ class _PlaygroundState extends State<Playground> {
   Offset _offset = Offset.zero;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-          child: GestureDetector(
-            onPanUpdate: (details) {
-              setState(() {
-                _offset += details.delta;
-              });
-            },
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return Container(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: Colors.grey),
-                  ),
-                  child: CustomPaint(
-                    painter: GraphPainter(offset: _offset),
-                    size: Size.infinite,
-                  ),
-                );
-              },
+    return GestureDetector(
+      onPanUpdate: (details) {
+        setState(() {
+          _offset += details.delta;
+        });
+      },
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            decoration: BoxDecoration(
+              border: Border.all(width: 2, color: Colors.grey),
             ),
-          ),
-        ),
+            child: CustomPaint(
+              painter: GraphPainter(offset: _offset),
+              size: Size.infinite,
+            ),
+          );
+        },
       ),
     );
   }
