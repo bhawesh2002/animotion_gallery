@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:animotion_gallery/widgets/back_arrow.dart';
-import 'package:animotion_gallery/widgets/palyground.dart';
+import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
 class AniContainerPage extends StatelessWidget {
