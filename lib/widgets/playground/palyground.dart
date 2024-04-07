@@ -25,7 +25,7 @@ class _PlaygroundState extends State<Playground> {
     });
   }
 
-  void toggleGraphVisibility() {
+  void _toggleGraphVisibility() {
     setState(() {
       graphVisible = graphVisible ? false : true;
     });
@@ -64,9 +64,11 @@ class _PlaygroundState extends State<Playground> {
             alignment: Alignment.center,
             child: widget.child,
           ),
-        const MoreOptions(
+        MoreOptions(
           bottom: 10,
           right: 10,
+          visibilityToggle: _toggleGraphVisibility,
+          resetToggle: _resetOffset,
         ),
       ],
     );
