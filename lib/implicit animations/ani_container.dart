@@ -29,7 +29,9 @@ class AniContainerPage extends StatelessWidget {
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: MediaQuery.of(context).size.height * 0.8,
-                    child: const Playground()),
+                    child: Playground(
+                      child: const AniContainer(),
+                    )),
               ),
             ),
             Padding(
