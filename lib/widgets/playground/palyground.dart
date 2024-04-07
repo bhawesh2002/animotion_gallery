@@ -1,4 +1,5 @@
 import 'package:animotion_gallery/painters/graph_painter.dart';
+import 'package:animotion_gallery/widgets/playground/more_options.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -27,16 +28,6 @@ class _PlaygroundState extends State<Playground> {
   void toggleGraphVisibility() {
     setState(() {
       graphVisible = graphVisible ? false : true;
-    });
-  }
-
-  void toggleExpanded() {
-    setState(() {
-      moreExpanded = moreExpanded ? false : true;
-      resetBottomPos = moreExpanded ? 60 : 10;
-      visibleBottomPos = moreExpanded ? 110 : 10;
-      scale = moreExpanded ? 1 : 0;
-      rotation = moreExpanded ? 0.5 : 0;
     });
   }
 
@@ -73,70 +64,9 @@ class _PlaygroundState extends State<Playground> {
             alignment: Alignment.center,
             child: widget.child,
           ),
-        AnimatedPositioned(
-          right: 10,
-          bottom: visibleBottomPos,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
-          child: AnimatedScale(
-            scale: scale,
-            duration: const Duration(milliseconds: 300),
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                style: IconButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  elevation: 2,
-                  shadowColor: Colors.black,
-                ),
-                onPressed: toggleGraphVisibility,
-                icon: const Icon(Icons.visibility_outlined),
-              ),
-            ),
-          ),
-        ),
-        AnimatedPositioned(
-          right: 10,
-          bottom: resetBottomPos,
-          curve: Curves.easeInOut,
-          duration: const Duration(milliseconds: 200),
-          child: AnimatedScale(
-            scale: scale,
-            duration: const Duration(milliseconds: 300),
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                style: IconButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  elevation: 2,
-                  shadowColor: Colors.black,
-                ),
-                onPressed: _resetOffset,
-                icon: const Icon(Icons.refresh_rounded),
-              ),
-            ),
-          ),
-        ),
-        Positioned.fill(
-          right: 10,
+        const MoreOptions(
           bottom: 10,
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: AnimatedRotation(
-              turns: rotation,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-              child: IconButton(
-                style: IconButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  elevation: 2,
-                  shadowColor: Colors.black,
-                ),
-                onPressed: toggleExpanded,
-                icon: const Icon(Icons.keyboard_arrow_up_rounded),
-              ),
-            ),
-          ),
+          right: 10,
         ),
       ],
     );
