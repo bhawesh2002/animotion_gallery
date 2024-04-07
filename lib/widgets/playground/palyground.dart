@@ -1,8 +1,10 @@
 import 'package:animotion_gallery/painters/graph_painter.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Playground extends StatefulWidget {
-  const Playground({super.key});
+  Widget? child;
+  Playground({super.key, this.child});
 
   @override
   State<Playground> createState() => _PlaygroundState();
@@ -66,6 +68,11 @@ class _PlaygroundState extends State<Playground> {
             },
           ),
         ),
+        if (widget.child != null)
+          Align(
+            alignment: Alignment.center,
+            child: widget.child,
+          ),
         AnimatedPositioned(
           right: 10,
           bottom: visibleBottomPos,
