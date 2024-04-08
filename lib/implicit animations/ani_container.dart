@@ -37,6 +37,7 @@ class AniContainerPage extends StatelessWidget {
                 ),
                 child: const Text(
                   "Tap Container to Animate",
+                  textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18),
                 ),
               ),

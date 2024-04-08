@@ -37,6 +37,7 @@ class AniAlignPage extends StatelessWidget {
                 ),
                 child: const Text(
                   "Tap on Container change its alignment.",
+                  textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18),
                 ),
               ),
