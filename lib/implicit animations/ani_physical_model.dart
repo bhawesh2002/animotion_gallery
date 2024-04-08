@@ -36,7 +36,7 @@ class AniPhysicalModelPage extends StatelessWidget {
                 vertical: MediaQuery.of(context).size.height * 0.03,
               ),
               child: const Text(
-                "Tap the Flutter Logo to change its padding",
+                "Tap the Container to Elevate it.",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 18),
               ),
