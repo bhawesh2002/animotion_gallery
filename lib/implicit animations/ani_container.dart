@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:animotion_gallery/widgets/back_arrow.dart';
 import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class AniContainerPage extends StatelessWidget {
   const AniContainerPage({super.key});
@@ -11,37 +11,34 @@ class AniContainerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        appBar: AppBar(
+          title: const Text("Animated Container"),
+        ),
+        body: Stack(
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.03,
-                vertical: MediaQuery.of(context).size.width * 0.02,
-              ),
+            Positioned.fill(
+              top: 20,
               child: Align(
-                alignment: Alignment.topLeft,
-                child: backArrow(context),
-              ),
-            ),
-            Expanded(
-              child: Align(
-                alignment: Alignment.center,
+                alignment: Alignment.topCenter,
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.9,
-                    height: MediaQuery.of(context).size.height * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.75,
                     child: Playground(
                       child: const AniContainer(),
                     )),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.05,
-                vertical: MediaQuery.of(context).size.height * 0.03,
-              ),
-              child: const Text(
-                "Tap Container to Animate",
-                style: TextStyle(fontSize: 18),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                ),
+                child: const Text(
+                  "Tap Container to Animate",
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ),
           ],
