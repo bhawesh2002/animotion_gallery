@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:animotion_gallery/widgets/back_arrow.dart';
+import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
 class AniAlignPage extends StatelessWidget {
@@ -10,31 +10,34 @@ class AniAlignPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: AppBar(
+        title: const Text("Animated Align"),
+      ),
       body: Stack(
         children: [
           Positioned.fill(
-            top: 10,
-            left: 10,
-            child:
-                Align(alignment: Alignment.topLeft, child: backArrow(context)),
-          ),
-          const Positioned.fill(
-              top: 100,
-              right: 25,
-              left: 25,
-              bottom: 200,
-              child: Align(alignment: Alignment.center, child: AniAlign())),
-          const Positioned.fill(
-            bottom: 100,
+            top: 20,
             child: Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.topCenter,
               child: SizedBox(
-                width: 300,
-                child: Text(
-                  "Tap on Container change its alignment.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.75,
+                child: Playground(
+                  child: const AniAlign(),
                 ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05,
+                vertical: MediaQuery.of(context).size.height * 0.03,
+              ),
+              child: const Text(
+                "Tap on Container change its alignment.",
+                style: TextStyle(fontSize: 18),
               ),
             ),
           ),
@@ -63,28 +66,26 @@ class _AniAlignState extends State<AniAlign> {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned.fill(
+    return GestureDetector(
+      onTap: animateAlignment,
       child: AnimatedAlign(
         duration: const Duration(milliseconds: 350),
         alignment: alignment,
         curve: Curves.easeInOutCubic,
-        child: GestureDetector(
-          onTap: animateAlignment,
-          child: SizedBox(
-            width: 120,
-            height: 120,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const FlutterLogo(
-                  size: 60,
-                ),
-                const SizedBox.square(
-                  dimension: 10,
-                ),
-                Text("(${alignment.x}, ${alignment.y})")
-              ],
-            ),
+        child: SizedBox(
+          width: 120,
+          height: 120,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const FlutterLogo(
+                size: 60,
+              ),
+              const SizedBox.square(
+                dimension: 10,
+              ),
+              Text("(${alignment.x}, ${alignment.y})")
+            ],
           ),
         ),
       ),
