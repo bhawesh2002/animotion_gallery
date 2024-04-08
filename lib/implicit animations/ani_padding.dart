@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:animotion_gallery/widgets/back_arrow.dart';
+import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
 class AniPaddingPage extends StatelessWidget {
@@ -10,38 +10,35 @@ class AniPaddingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Animated Padding"),
+        ),
         body: Stack(
           children: [
             Positioned.fill(
-              top: 10,
-              left: 10,
+              top: 20,
               child: Align(
-                  alignment: Alignment.topLeft, child: backArrow(context)),
-            ),
-            Positioned.fill(
-              top: 100,
-              bottom: 200,
-              left: 25,
-              right: 25,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  border: Border.all(width: 2, color: Colors.black),
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: MediaQuery.of(context).size.height * 0.75,
+                  child: Playground(
+                    child: const AniPadding(),
+                  ),
                 ),
-                child: const AniPadding(),
               ),
             ),
-            const Positioned.fill(
-              bottom: 100,
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: SizedBox(
-                  width: 300,
-                  child: Text(
-                    "Tap Flutter logo to change its padding",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
-                  ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                ),
+                child: const Text(
+                  "Tap the Flutter Logo to change its padding",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
             ),
@@ -81,7 +78,9 @@ class _AniPaddingState extends State<AniPadding> {
       curve: Curves.easeInOutSine,
       child: GestureDetector(
         onTap: animatePadding,
-        child: const FlutterLogo(),
+        child: const FlutterLogo(
+          size: 50,
+        ),
       ),
     );
   }
