@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:animotion_gallery/widgets/back_arrow.dart';
+import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
 class AniPositionedPage extends StatelessWidget {
@@ -10,36 +10,35 @@ class AniPositionedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Animated Positioned"),
+        ),
         body: Stack(
           children: [
             Positioned.fill(
-              top: 10,
-              left: 10,
+              top: 20,
               child: Align(
-                  alignment: Alignment.topLeft, child: backArrow(context)),
-            ),
-            Positioned.fill(
-              top: 100,
-              left: 25,
-              right: 25,
-              bottom: 200,
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      border: Border.all(width: 2)),
-                  child: const AniPositioned()),
-            ),
-            const Positioned.fill(
-              bottom: 100,
-              child: Align(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment.topCenter,
                 child: SizedBox(
-                  width: 300,
-                  child: Text(
-                    "Tap Flutter logo to change its position",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: MediaQuery.of(context).size.height * 0.75,
+                  child: Playground(
+                    child: const AniPositioned(),
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                ),
+                child: const Text(
+                  "Tap the Flutter Logo to change its Position.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
             ),
