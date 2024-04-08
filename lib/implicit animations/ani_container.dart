@@ -20,11 +20,12 @@ class AniContainerPage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topCenter,
                 child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: MediaQuery.of(context).size.height * 0.75,
-                    child: Playground(
-                      child: const AniContainer(),
-                    )),
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: MediaQuery.of(context).size.height * 0.75,
+                  child: Playground(
+                    child: const AniContainer(),
+                  ),
+                ),
               ),
             ),
             Align(
