@@ -1,4 +1,4 @@
-import 'package:animotion_gallery/widgets/back_arrow.dart';
+import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
 class AniCrossFadePage extends StatelessWidget {
@@ -8,31 +8,35 @@ class AniCrossFadePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: AppBar(
+        title: const Text("Animated Cross Fade"),
+      ),
       body: Stack(
         children: [
           Positioned.fill(
-            top: 10,
-            left: 10,
-            child:
-                Align(alignment: Alignment.topLeft, child: backArrow(context)),
-          ),
-          const Positioned.fill(
+            top: 20,
             child: Align(
-              alignment: Alignment.center,
-              child: AniCrossFade(),
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.75,
+                child: Playground(
+                  child: const AniCrossFade(),
+                ),
+              ),
             ),
           ),
-          const Positioned.fill(
-            bottom: 100,
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SizedBox(
-                width: 350,
-                child: Text(
-                  "Tap on the Container to animate between rectangle and circle",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
-                ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05,
+                vertical: MediaQuery.of(context).size.height * 0.03,
+              ),
+              child: const Text(
+                "Tap on Container to animate between rectangle and circle.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
               ),
             ),
           ),
