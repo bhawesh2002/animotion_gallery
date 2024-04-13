@@ -11,10 +11,20 @@ class AniContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<OptionIconButton> optionButtonList = [
-      const OptionIconButton(icon: Icons.edit),
-      const OptionIconButton(icon: Icons.edit_location_alt_rounded),
-      const OptionIconButton(icon: Icons.photo_size_select_large),
-      const OptionIconButton(icon: Icons.swap_horizontal_circle),
+      const OptionIconButton(
+        icon: Icons.edit,
+        tooltip: 'Edit',
+      ),
+      const OptionIconButton(
+        icon: Icons.edit_location_alt_rounded,
+        tooltip: 'Move Object',
+      ),
+      const OptionIconButton(
+        icon: Icons.photo_size_select_large,
+        tooltip: 'Resize Object',
+      ),
+      const OptionIconButton(
+          icon: Icons.swap_horizontal_circle, tooltip: 'Change Object'),
     ];
     return SafeArea(
       child: Scaffold(
@@ -37,39 +47,42 @@ class AniContainerPage extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.bottomLeft,
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05,
                   vertical: MediaQuery.of(context).size.height * 0.03,
                 ),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.90,
+                  width: MediaQuery.of(context).size.width * 0.73,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children:
-                          List.generate(optionButtonList.length + 1, (index) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal:
-                                MediaQuery.of(context).size.width * 0.02,
-                          ),
-                          child: index == optionButtonList.length
-                              ? PlayButton(
-                                  action: () {
-                                    debugPrint("action started");
-                                  },
-                                )
-                              : optionButtonList[index],
-                        );
-                      }),
+                      children: List.generate(
+                        optionButtonList.length,
+                        (index) {
+                          return Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: optionButtonList[index],
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                ),
+                child: PlayButton(action: () {}),
+              ),
+            )
           ],
         ),
       ),
