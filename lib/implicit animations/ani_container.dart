@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:animotion_gallery/widgets/option_icon_button.dart';
+import 'package:animotion_gallery/widgets/play_button.dart';
 import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,12 @@ class AniContainerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<OptionIconButton> optionButtonList = [
+      const OptionIconButton(icon: Icons.edit),
+      const OptionIconButton(icon: Icons.edit_location_alt_rounded),
+      const OptionIconButton(icon: Icons.photo_size_select_large),
+      const OptionIconButton(icon: Icons.swap_horizontal_circle),
+    ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -35,10 +43,30 @@ class AniContainerPage extends StatelessWidget {
                   horizontal: MediaQuery.of(context).size.width * 0.05,
                   vertical: MediaQuery.of(context).size.height * 0.03,
                 ),
-                child: const Text(
-                  "Tap Container to Animate",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.90,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children:
+                          List.generate(optionButtonList.length + 1, (index) {
+                        return Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.02,
+                          ),
+                          child: index == optionButtonList.length
+                              ? PlayButton(
+                                  action: () {
+                                    debugPrint("action started");
+                                  },
+                                )
+                              : optionButtonList[index],
+                        );
+                      }),
+                    ),
+                  ),
                 ),
               ),
             ),
