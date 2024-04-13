@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class OptionIconButton extends StatelessWidget {
   final IconData icon;
-  const OptionIconButton({super.key, required this.icon});
+  final String? tooltip;
+  const OptionIconButton({super.key, required this.icon, this.tooltip});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class OptionIconButton extends StatelessWidget {
         elevation: 2,
       ),
       onPressed: () {},
+      tooltip: tooltip,
       icon: Icon(icon),
     );
   }
