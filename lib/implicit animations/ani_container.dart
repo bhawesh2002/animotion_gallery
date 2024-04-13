@@ -11,9 +11,28 @@ class AniContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<OptionIconButton> optionButtonList = [
-      const OptionIconButton(
+      OptionIconButton(
         icon: Icons.edit,
         tooltip: 'Edit',
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            showDragHandle: true,
+            builder: (BuildContext context) {
+              return BottomSheet(
+                onClosing: () {},
+                builder: (context) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.5,
+                      vertical: MediaQuery.of(context).size.height * 0.5,
+                    ),
+                  );
+                },
+              );
+            },
+          );
+        },
       ),
       const OptionIconButton(
         icon: Icons.edit_location_alt_rounded,
@@ -24,7 +43,9 @@ class AniContainerPage extends StatelessWidget {
         tooltip: 'Resize Object',
       ),
       const OptionIconButton(
-          icon: Icons.swap_horizontal_circle, tooltip: 'Change Object'),
+        icon: Icons.swap_horizontal_circle,
+        tooltip: 'Change Object',
+      ),
     ];
     return SafeArea(
       child: Scaffold(
