@@ -38,6 +38,7 @@ class _PlayButtonState extends State<PlayButton> {
         onPressed: () {
           playPressed();
         },
+        tooltip: 'play/pause',
         icon: Icon(played ? Icons.play_arrow : Icons.pause),
       ),
     );
