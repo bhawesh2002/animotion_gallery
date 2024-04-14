@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animotion_gallery/widgets/edit_bottom_sheet.dart';
 import 'package:animotion_gallery/widgets/option_icon_button.dart';
 import 'package:animotion_gallery/widgets/play_button.dart';
 import 'package:animotion_gallery/widgets/playground/palyground.dart';
@@ -18,18 +19,9 @@ class AniContainerPage extends StatelessWidget {
           showModalBottomSheet(
             context: context,
             showDragHandle: true,
+            enableDrag: true,
             builder: (BuildContext context) {
-              return BottomSheet(
-                onClosing: () {},
-                builder: (context) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.5,
-                      vertical: MediaQuery.of(context).size.height * 0.5,
-                    ),
-                  );
-                },
-              );
+              return const EditBottomSheet();
             },
           );
         },
