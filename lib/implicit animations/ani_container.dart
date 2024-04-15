@@ -36,7 +36,7 @@ class AniContainerPage extends StatelessWidget {
       ),
       const OptionIconButton(
         icon: Icons.swap_horizontal_circle,
-        tooltip: 'Change Object',
+        tooltip: 'Swap Object',
       ),
     ];
     return SafeArea(
