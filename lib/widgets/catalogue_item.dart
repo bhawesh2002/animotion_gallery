@@ -21,7 +21,7 @@ class CatalogueItem extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.9,
           child: Padding(
             padding: EdgeInsets.symmetric(
-                vertical: MediaQuery.of(context).size.height * 0.02,
+                vertical: MediaQuery.of(context).size.height * 0.015,
                 horizontal: MediaQuery.of(context).size.width * 0.05),
             child: Text(
               itemLabel,
