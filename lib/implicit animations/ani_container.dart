@@ -68,19 +68,13 @@ class AniContainerPage extends StatelessWidget {
                 ),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.73,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: List.generate(
-                        optionButtonList.length,
-                        (index) {
-                          return Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: optionButtonList[index],
-                          );
-                        },
-                      ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: List.generate(
+                      optionButtonList.length,
+                      (index) {
+                        return optionButtonList[index];
+                      },
                     ),
                   ),
                 ),
