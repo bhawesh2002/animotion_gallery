@@ -26,7 +26,7 @@ class _EditBottomSheetState extends State<EditBottomSheet>
       onClosing: () {},
       builder: (context) {
         return const Center(
-          child: Text("Edit Botton Sheet"),
+          child: Text("Edit Properties of Container"),
         );
       },
     );
