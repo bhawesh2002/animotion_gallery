@@ -37,6 +37,10 @@ class AniContainerPage extends StatelessWidget {
         icon: Icons.swap_horizontal_circle,
         tooltip: 'Swap Object',
       ),
+      const OptionIconButton(
+        icon: Icons.speed_rounded,
+        tooltip: "Speed",
+      ),
     ];
     return SafeArea(
       child: Scaffold(
