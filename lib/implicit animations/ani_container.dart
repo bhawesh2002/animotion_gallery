@@ -34,8 +34,8 @@ class AniContainerPage extends StatelessWidget {
         tooltip: 'Resize Object',
       ),
       const OptionIconButton(
-        icon: Icons.swap_horizontal_circle,
-        tooltip: 'Swap Object',
+        icon: Icons.graphic_eq_rounded,
+        tooltip: 'Curves',
       ),
       const OptionIconButton(
         icon: Icons.speed_rounded,
