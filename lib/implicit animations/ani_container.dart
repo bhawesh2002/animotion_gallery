@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:animotion_gallery/widgets/edit_bottom_sheet.dart';
 import 'package:animotion_gallery/widgets/option_icon_button.dart';
-import 'package:animotion_gallery/widgets/play_button.dart';
 import 'package:animotion_gallery/widgets/playground/palyground.dart';
 import 'package:flutter/material.dart';
 
@@ -59,37 +58,6 @@ class AniContainerPage extends StatelessWidget {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05,
-                  vertical: MediaQuery.of(context).size.height * 0.03,
-                ),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.73,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: List.generate(
-                      optionButtonList.length,
-                      (index) {
-                        return optionButtonList[index];
-                      },
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05,
-                  vertical: MediaQuery.of(context).size.height * 0.03,
-                ),
-                child: PlayButton(action: () {}),
-              ),
-            )
           ],
         ),
       ),
