@@ -13,7 +13,7 @@ class OptionIconButton extends StatelessWidget {
       style: IconButton.styleFrom(
         backgroundColor: Colors.white,
         shadowColor: Colors.black,
-        elevation: 2,
+        elevation: 4,
       ),
       onPressed: onPressed ?? () {},
       tooltip: tooltip,
